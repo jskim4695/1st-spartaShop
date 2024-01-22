@@ -1,0 +1,19 @@
+{
+  "name": "1st_node_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jskim4695/1st-spartaShop.git",
+  "author": "JSKim <jskim4695@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write *.js **/*.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.1.0"
+  },
+  "devDependencies": {
+    "prettier": "3.2.4"
+  }
+}
