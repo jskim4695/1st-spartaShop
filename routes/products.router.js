@@ -5,7 +5,7 @@ const router = express.Router();
 
 /** 상품 등록 **/
 // localhost:3000/api/product POST
-router.post('/product', async (req, res) => {
+router.post('/products', async (req, res) => {
 	try {
 		if (!req.body) {
 			return res.status(400).json({
@@ -14,6 +14,15 @@ router.post('/product', async (req, res) => {
 		}
 
 		const { title, content, writer, password } = req.body; // 구조분해할당
+
+		const regPass = /^(?=.*[a-zA-Z])(?=.*\d).{4}$/;
+		// password validation check
+		if (!regPass.test(password)) {
+			return res.status(400).json({
+				errorMessage: '비밀번호는 숫자와 영문으로 이루어진 4자리여야 합니다.',
+			});
+		}
+
 		const newProduct = new Product({
 			title,
 			content,
